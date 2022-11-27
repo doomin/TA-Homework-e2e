@@ -1,17 +1,19 @@
-# Set up project
+# Evolution QA Bootcamp E2E homework
+
+## Set up project
 
 ```
 npm install
 ```
 
-# Run tests
+## Run tests
 
 
 ```
 npm run test
 ```
 
-# View test resulte
+## View test results
 
 ```
 allure open
