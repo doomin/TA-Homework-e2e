@@ -3,8 +3,7 @@ Feature: Bootcamp E2E
   Background: User accesses newegg homepage
 
     Given I navigate to the home page
-    And promo banner appears
-    When I click the close button
+    When I click the close banner button
     Then I should no longer see the promo banner
 
   Scenario: As a user I can use the search bar for searching items

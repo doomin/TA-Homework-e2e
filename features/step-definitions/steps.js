@@ -5,15 +5,6 @@ Given("I navigate to the home page", async () => {
     await browser.url(`https://www.newegg.com`);
 });
 
-Given("promo banner appears", async () => {
-    try {
-        await $(`.modal-content`).waitForDisplayed({ timeout: 5000});
-    }
-    catch {
-        console.log("Promo window is not displayed.");
-    }
-});
-
 Given("I enter the word {string} in the search bar", async (searchText) => {
     const searchBar = await $(`input[type="search"]`);
     await searchBar.setValue(searchText);
@@ -25,13 +16,14 @@ Given("I open {string} tab", async (tab) => {
     await expect(url).toContain("todays-deals");
 });
 
-When("I click the close button", async () => {
-    try{
+When("I click the close banner button", async () => {
+    try {
+        await $(`.modal-content`).waitForDisplayed({ timeout: 5000});
         await $(`[aria-label="Close"]`).click();
     }
     catch {
         console.log("Promo window is not displayed.");
-    }   
+    }
 });
 
 When("I click the search element", async () => {
